@@ -6,12 +6,28 @@ from django import template
 
 register = template.Library()
 
+@register.tag(name="randomgen")
+def randomgen(parser, token):
+	bits = token.contents.split()
+	return RandomgenNode(bits[1:])
+	
+class RandomgenNode(template.Node):
+	def __init__(self, *args, **kwargs):
+		self.list = [args]
+	
+	def render(self, context):
+		if 'hash' in self.list:
+			float = random.random()
+			return float
+		else:
+			return self.list
+"""
 class CurrentTimeNode(template.Node):
     def __init__(self, format_string):
         self.format_string = format_string
     def render(self, context):
         return datetime.datetime.now().strftime(self.format_string)
-        
+
 @register.tag(name="randomgen")
 def do_current_time(parser, token):
     try:
@@ -22,3 +38,4 @@ def do_current_time(parser, token):
     if not (format_string[0] == format_string[-1] and format_string[0] in ('"', "'")):
         raise template.TemplateSyntaxError("%r tag's argument should be in quotes" % tag_name)
     return CurrentTimeNode(format_string[1:-1])
+"""
