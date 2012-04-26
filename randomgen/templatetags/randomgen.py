@@ -22,19 +22,12 @@ class RandomgenNode(template.Node):
     
     def render(self, context):
         if 'hash' in self.items:
-            hashmd5 = os.urandom(16).encode('hex')
-            return hashmd5
+            result = os.urandom(16).encode('hex')
         elif 'float' in self.items:
-            num1 = self.items[0]
-            num2 = self.items[1]
-            floatnum = random.uniform(int(num1), int(num2))
-            return floatnum
+            result = random.uniform(int(self.items[0]), int(self.items[1]))
         elif not self.items:
-            floatnum = random.random()
-            return floatnum
+            result = random.random()
         else:
-            num1 = self.items[0]
-            num2 = self.items[1]
-            intnum = random.randint(int(num1), int(num2))
-            return intnum
+            result = random.randint(int(self.items[0]), int(self.items[1]))
+        return result
             
