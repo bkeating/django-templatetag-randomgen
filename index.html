@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>django-templatetag-randomgen by bkeating</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>django-templatetag-randomgen</h1>
+        <p>An easy way to generate random numbers and hashes inside template files.</p>
+        <p class="view"><a href="https://github.com/bkeating/django-templatetag-randomgen">View the Project on GitHub <small>bkeating/django-templatetag-randomgen</small></a></p>
+        <ul>
+          <li><a href="https://github.com/bkeating/django-templatetag-randomgen/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/bkeating/django-templatetag-randomgen/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/bkeating/django-templatetag-randomgen">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>django-templatetag-randomgen</h1>
+
+<p>An easy way to generate random numbers and hashes inside template files.<br>
+django-templatetag-randomgen is a simple front-end to Python's <code>[os.random](http://docs.python.org/library/os.html#os.urandom)</code> modules.</p>
+
+<h2>Install</h2>
+
+<ol>
+<li>Add <code>django-templatetag-randomgen</code> to your <code>INSTALLED_APPS</code> </li>
+<li>Add <code>{% load randomgen %}</code> to the top of template files you wish to use these tags in.</li>
+</ol><h2>Usage</h2>
+
+<p>To generate a random floating point number between 0 and 1:</p>
+
+<pre><code>{% randomgen %}                   # e.g. 0.27684734152988466
+</code></pre>
+
+<p>To generate a md5 hash:</p>
+
+<pre><code>{% randomgen hash %}              # e.g. 522748524ad010358705b6852b81be4c
+</code></pre>
+
+<p>To generate a random number between 100 and 1000:</p>
+
+<pre><code>{% randomgen 100 1000 %}          # e.g. 156
+</code></pre>
+
+<p>To generate a random floating point within a range:</p>
+
+<pre><code>{% randomgen 100 1000 float %}    # e.g. 241.05597162504844
+</code></pre>
+
+<h2>Authors</h2>
+
+<p>This template tag was written by <a href="https://github.com/bkeating/">Ben Keating</a> and <a href="https://github.com/jwparrish/">Jon Parrish</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/bkeating">bkeating</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31208669-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
