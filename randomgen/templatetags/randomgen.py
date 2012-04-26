@@ -13,14 +13,22 @@ def randomgen(parser, token):
 	
 class RandomgenNode(template.Node):
 	def __init__(self, *args, **kwargs):
-		self.list = [args]
+		self.items = [args]
+		
+		#for x in args:
+		#	self.items.append(x)
 	
 	def render(self, context):
-		if 'hash' in self.list:
+		if 'hash' in self.items:
+			hashnum = '[--hash number here--]'
+			return hashnum
+		#elif 'float' in self.items[0]:
+		#	num1 = self.items[0][0]
+		#	float = random.uniform(num1,200)
+		#	return float
+		else:
 			float = random.random()
 			return float
-		else:
-			return self.list
 """
 class CurrentTimeNode(template.Node):
     def __init__(self, format_string):
