@@ -2,7 +2,7 @@ django-templatetag-randomgen
 ============================
 
 An easy way to generate random numbers and hashes inside template files.  
-django-templatetag-randomgen is a simple front-end to Python's [hashlib](http://docs.python.org/library/hashlib.html) and [random](http://docs.python.org/library/random.html) modules.
+django-templatetag-randomgen is a simple front-end to Python's [``random``](http://docs.python.org/library/random.html) module and [``os.urandom``](http://docs.python.org/library/os.html#os.urandom) function.
 
 ## Install
 
